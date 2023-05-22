@@ -1,6 +1,11 @@
-function D = POW2ECI(a, b ,c)
-    A = [cos(a) sin(a) 0; -sin(a) cos(a) 0; 0 0 1];
-    B = [1 0 0; 0 cos(b) sin(b); 0 -sin(b) cos(b)];
-    C = [cos(c) sin(c) 0; -sin(c) cos(c) 0; 0 0 1];
+function D = POW2ECI(w, i ,n)
+    arg_prg = w;
+    inc_angle =i;
+    RAAN = n;
+    A = [cos(arg_prg) sin(arg_prg) 0; -sin(arg_prg) cos(arg_prg) 0; 0 0 1];
+    B = [1 0 0; 0 cos(inc_angle) sin(inc_angle); 0 -sin(inc_angle) cos(inc_angle)];
+    C = [cos(RAAN) sin(RAAN) 0; -sin(RAAN) cos(RAAN) 0; 0 0 1];
     D = A * B * C;
-    
+end
+
+
