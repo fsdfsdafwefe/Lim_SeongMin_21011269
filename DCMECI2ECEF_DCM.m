@@ -8,7 +8,7 @@ function DCM = DCMECI2ECEF_DCM(time) % time = [year, month, day, hour , minute, 
     minute = time1(1,5) * 60;
     second = time1(1,6);
     t = year + month + day + hour + minute + second;
-    w = pi/12;
+    w = pi/12/3600;
     theta0 = 0;
     theta = theta0 + w * t; % t = t1 - t0
     DCM = [cos(theta) sin(theta) 0; -sin(theta) cos(theta) 0; 0 0 1];
